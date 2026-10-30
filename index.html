@@ -134,7 +134,8 @@ if(ed){const n=ed.stamps.filter(x=>x.done).length;document.getElementById("stamp
 }
 function renderIdols(){
 document.getElementById("idolList").innerHTML=data.idols.map((x,i)=>`<article class="card">
-<h3>${esc(x.name)}</h3><label>解放条件</label><textarea data-kind="idol" data-i="${i}" data-field="condition">${esc(x.condition)}</textarea>
+<input type="text" aria-label="プレート名" data-kind="plate" data-i="${i}" data-field="name" value="${esc(x.name)}">
+<label>獲得条件</label><textarea data-kind="idol" data-i="${i}" data-field="condition">${esc(x.condition)}</textarea>
 <label class="check"><input type="checkbox" data-kind="idol" data-i="${i}" data-field="unlocked" ${x.unlocked?"checked":""}> 解放済み</label>
 </article>`).join("");
 }
