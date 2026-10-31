@@ -158,8 +158,8 @@ function renderStamps(){
 const ed=data.editions[data.selected];if(!ed)return;
 document.getElementById("stampList").innerHTML=ed.stamps.map((x,i)=>`<article class="stamp ${x.done?"done":""}">
 <div class="seal">${x.done?"★":"♡"}</div>
-<input aria-label="スタンプ名" type="text" data-kind="stamp" data-i="${i}" data-field="name" value="${esc(x.name)}">
-<label>報酬・条件</label><input aria-label="報酬や条件" type="text" data-kind="stamp" data-i="${i}" data-field="reward" value="${esc(x.reward)}">
+<h3>${esc(x.name)}</h3>
+<label>報酬・条件</label><p>${esc(x.reward)}</p>
 <label class="check"><input type="checkbox" data-kind="stamp" data-i="${i}" data-field="done" ${x.done?"checked":""}> 獲得済み</label>
 </article>`).join("");
 }
