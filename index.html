@@ -140,7 +140,7 @@ document.getElementById("idolList").innerHTML=data.idols.map((x,i)=>`<article cl
 }
 function renderPlates(){
 document.getElementById("plateList").innerHTML=data.plates.map((x,i)=>`<article class="card">
-<input type="text" aria-label="プレート名" data-kind="plate" data-i="${i}" data-field="name" value="${esc(x.name)}"><label>獲得条件</label><textarea data-kind="plate" data-i="${i}" data-field="condition">${esc(x.condition)}</textarea>
+<input type="text" aria-label="プレート名" data-kind="plate" data-i="${i}" data-field="name" value="${esc(x.name)}"><label>獲得条件</label><p>${esc(x.condition)}</p>
 <label>情報の状態</label><select data-kind="plate" data-i="${i}" data-field="status">${["未確認","推測","確認済み"].map(s=>`<option ${x.status===s?"selected":""}>${s}</option>`).join("")}</select>
 <label class="check"><input type="checkbox" data-kind="plate" data-i="${i}" data-field="acquired" ${x.acquired?"checked":""}> 獲得済み</label>
 </article>`).join("");
