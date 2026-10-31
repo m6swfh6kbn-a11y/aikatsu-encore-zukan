@@ -181,6 +181,7 @@ document.getElementById("idolList").innerHTML=data.idols.map((x,i)=>`<article cl
 function renderPlates(){
 document.getElementById("plateList").innerHTML=data.plates.map((x,i)=>`<article class="card">
 <h3>${esc(x.name)}</h3>
+<label>獲得条件</label><p>${esc(x.condition)}</p>
 <label class="check"><input type="checkbox" data-kind="plate" data-i="${i}" data-field="acquired" ${x.acquired?"checked":""}> 獲得済み</label>
 </article>`).join("");
 }
