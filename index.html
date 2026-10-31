@@ -120,6 +120,11 @@ editions:[
 });
 let data;
 try{data=JSON.parse(localStorage.getItem("aikatsuEncoreZukanV1"))||defaultData()}catch(e){data=defaultData()}
+data.idols[7].name="姫乃みえる";
+data.idols[8].name="真未夢メエ";
+data.idols[9].name="和央パリン";
+data.idols[10].name="凛堂たいむ";
+localStorage.setItem("aikatsuEncoreZukanV1",JSON.stringify(data));
 function save(){localStorage.setItem("aikatsuEncoreZukanV1",JSON.stringify(data));renderProgress()}
 function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function renderProgress(){
